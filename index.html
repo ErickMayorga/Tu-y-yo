@@ -176,7 +176,7 @@
         </div>
 
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
-
+          
           <div class="col-lg-4 col-md-6 portfolio-item filter-jime">
             <div class="portfolio-wrap">
               <img src="assets/img/fotos/foto1.jpg" class="img-fluid" alt="">
@@ -280,7 +280,7 @@
           <h2>Nuestras líricas</h2>
           <p>Nunca olvides que tu eres mi inspiración más bonita. Cada palabra que sale de mi corazón sale directo hacia a ti. No quiero olvidar ninguna de esas explosiones de cariño e inspiración, así que dejaré todas mis creaciones aquí :3</p>
         </div>
-
+        <button onclick="insertarFotos();">Generate</button>
         <div class="row">
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
             <div class="icon"><i class="bi bi-briefcase"></i></div>
@@ -316,8 +316,6 @@
 
       </div>
     </section><!-- End Nuestras liricas Section -->
-    
-    
 
     <!-- ======= Nuestros recuerdos section ======= -->
     <section id="recuerdos" class="testimonials section-bg">
@@ -327,7 +325,7 @@
           <h2>Nuestros recuerdos</h2>
           <p>A lo largo del tiempo, en fechas especiales y momentos bonitos, nos hemos dicho un "Te quiero" de diferentes formas. Te recordaré esas cosas pequeñas que me hicieron sonreir, y seguramente a ti también lo hicieron :3</p>
         </div>
-
+        
         <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
           <div class="swiper-wrapper">
 
@@ -457,10 +455,6 @@
         &copy; Copyright <strong><span>Bootstrap</span></strong>
       </div>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
         Modified by <a href="https://bootstrapmade.com/">Erick Mayorga</a>
       </div>
     </div>
@@ -478,6 +472,44 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/typed.js/typed.min.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+
+  <script>
+    function insertarFotos(){
+      /*
+      var directoryPath = "assets/docs/poemas";
+      try{
+      var ls=fs.readdirSync(directoryPath);
+
+      for (let index = 0; index < ls.length; index++) {
+         const file = path.join(directoryPath, ls[index]);
+         var dataFile =null;
+         try{
+            dataFile = fs.lstatSync(file);
+         }catch(e){}
+
+      }
+   }catch(e){}
+      
+      file_length = flength(""); 
+      content = fread(file, file_length);
+      */
+      var fs = require('fs'),
+      readline = require('readline');
+
+      var reader = readline.createInterface({
+        input: fs.createReadStream('assets/docs/poemas/poema1.txt')
+      });
+
+      reader.on('line', function (line) {
+        console.log(line);
+      });
+    }
+
+    function insertarRecuerdos(){
+
+    }
+
+</script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
