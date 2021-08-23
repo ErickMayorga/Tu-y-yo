@@ -544,9 +544,9 @@
 
       let a1 = document.createElement("a");
       */
-      document.querySelector("#fotos .portafolio-item:last-child").appendChild(div2);
-      document.querySelector("#fotos .portafolio-item:last-child .portfolio-warp").appendChild(img);
-      
+      div2.appendChild(img);
+      div1.appendChild(div2);
+      document.querySelector("#fotos .portfolio-container").appendChild(div1);     
     }
 </script>
 
