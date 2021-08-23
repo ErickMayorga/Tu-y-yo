@@ -174,11 +174,11 @@
             </ul>
           </div>
         </div>
-
+        <!--
         <button onclick="crearDivFoto();">Insertar</button>
+          -->
 
-
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100" onload="crearDivFoto">
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-jime">
             <div class="portfolio-wrap">
@@ -544,8 +544,8 @@
       let a1 = document.createElement("a");
       a1.setAttribute("href","assets/img/pibu_bear.jpg");
       a1.setAttribute("data-gallery","portfolioGallery");
-      a1.setAttribute("title","Jime 1");
       a1.classList.add("portfolio-lightbox");
+      a1.setAttribute("title","Jime 2");
 
       let i1 = document.createElement("i");
       i1.classList.add("bx");
