@@ -524,7 +524,6 @@
     </div>
     */
 
-
     function crearDivFoto(){
       let div1 = document.createElement("div");
       div1.classList.add("col-lg-4");
@@ -538,13 +537,35 @@
       let img = document.createElement("img");
       img.setAttribute("src","assets/img/pibu_bear.jpg");
       img.classList.add("img-fluid");
-      /*
+      
       let div3 = document.createElement("div");
       div3.classList.add("portfolio-links");
 
       let a1 = document.createElement("a");
-      */
+      a1.setAttribute("href","assets/img/pibu_bear.jpg");
+      a1.setAttribute("data-gallery","portfolioGallery");
+      a1.setAttribute("title","Jime 1");
+      a1.classList.add("portfolio-lightbox");
+
+      let i1 = document.createElement("i");
+      i1.classList.add("bx");
+      i1.classList.add("bx-plus");
+
+      let a2 = document.createElement("a");
+      a2.setAttribute("href","portfolio-details.html");
+      a2.setAttribute("title","More Details");
+
+      let i2 = document.createElement("i");
+      i2.classList.add("bx");
+      i2.classList.add("bx-link");
+
+      a1.appendChild(i1);
+      a2.appendChild(i2);
+      div3.appendChild(a1);
+      div3.appendChild(a2);
+
       div2.appendChild(img);
+      div2.appendChild(div3);
       div1.appendChild(div2);
       document.querySelector("#fotos .portfolio-container").appendChild(div1);     
     }
