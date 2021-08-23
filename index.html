@@ -175,6 +175,9 @@
           </div>
         </div>
 
+        <button onclick="crearDivFoto();">Insertar</button>
+
+
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-jime">
@@ -280,7 +283,7 @@
           <h2>Nuestras líricas</h2>
           <p>Nunca olvides que tu eres mi inspiración más bonita. Cada palabra que sale de mi corazón sale directo hacia a ti. No quiero olvidar ninguna de esas explosiones de cariño e inspiración, así que dejaré todas mis creaciones aquí :3</p>
         </div>
-        <button onclick="insertarFotos();">Generate</button>
+        
         <div class="row">
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
             <div class="icon"><i class="bi bi-briefcase"></i></div>
@@ -509,6 +512,39 @@
 
     }
 
+    /*
+    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+      <div class="portfolio-wrap">
+        <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+        <div class="portfolio-links">
+          <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
+          <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+        </div>
+      </div>
+    </div>
+    */
+
+
+    function crearDivFoto(){
+      let div1 = document.createElement("div");
+      div1.classList.add("col-lg-4 col-md-6 portfolio-item filter-card");
+      
+      let div2 = document.createElement("div");
+      div2.classList.add("portfolio-wrap");
+
+      let img = document.createElement("img");
+      img.setAttribute("src","assets/img/pibu_bear.jpg");
+      img.classList.add("img-fluid");
+      /*
+      let div3 = document.createElement("div");
+      div3.classList.add("portfolio-links");
+
+      let a1 = document.createElement("a");
+      */
+      document.querySelector("#fotos .container .portfolio-container .portafolio-item:nth-last-child(1)").appendChild(div2);
+      document.querySelector("#fotos .container .portfolio-container .portafolio-item:nth-last-child(1) .portfolio-warp").appendChild(img);
+      
+    }
 </script>
 
   <!-- Template Main JS File -->
