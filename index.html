@@ -463,9 +463,30 @@
     <pre id="contenido-archivo"></pre>
     */
 
-
     function insertarRecuerdos(){
 
+    }
+
+    /*
+    <div class="swiper-slide">
+      <div class="testimonial-item" data-aos="fade-up">
+        <p>
+          <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+          Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+          <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+        </p>
+        <img src="assets/img/recuerdos/recuerdo1.jpg" class="testimonial-img" alt="">
+        <h3>Saul Goodman</h3>
+        <h4>Ceo &amp; Founder</h4>
+      </div>
+    </div><!-- End testimonial item -->
+    */
+
+    function crearDivRecuerdo(){
+      let div1 = document.createElement("div");
+      div1.classList.add("swiper-slide");
+
+      document.querySelector("#recuerdos .swiper-wrapper").appendChild(div1);
     }
 
     /*
@@ -496,6 +517,7 @@
       var text1 = document.createTextNode("Poema de prueba");
 
       let p = document.createElement("h4");
+      p.classList.add("description");
       var text2 = document.createTextNode("Contenido de prueba");
 
       div2.appendChild(i1);
@@ -503,7 +525,7 @@
       p.appendChild(text2);
       div1.appendChild(div2);
       div1.appendChild(h4);
-      div2.appendChild(p);
+      div1.appendChild(p);
       document.querySelector("#liricas .poema-container").appendChild(div1);
     }
 
