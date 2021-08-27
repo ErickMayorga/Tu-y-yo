@@ -542,7 +542,7 @@
     }
 
 
-    function crearDivFoto(){
+    function crearDivFoto(imagen){
       let div1 = document.createElement("div");
       div1.classList.add("col-lg-4");
       div1.classList.add("col-md-6");
@@ -553,14 +553,14 @@
       div2.classList.add("portfolio-wrap");
 
       let img = document.createElement("img");
-      img.setAttribute("src","assets/img/pibu_bear.jpg");
+      img.setAttribute("src",imagen);
       img.classList.add("img-fluid");
       
       let div3 = document.createElement("div");
       div3.classList.add("portfolio-links");
 
       let a1 = document.createElement("a");
-      a1.setAttribute("href","assets/img/pibu_bear.jpg");
+      a1.setAttribute("href",imagen);
       a1.setAttribute("data-gallery","portfolioGallery");
       a1.classList.add("portfolio-lightbox");
       a1.setAttribute("title","Jime 2");
@@ -589,7 +589,7 @@
     }
 
     function init(){
-      crearDivFoto();
+      crearDivFoto("assets/img/pibu_bear.jpg");
       crearDivPoema();
       crearDivRecuerdo();
     }
