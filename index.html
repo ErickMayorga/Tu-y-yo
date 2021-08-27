@@ -199,7 +199,7 @@
           <p>Nunca olvides que tu eres mi inspiración más bonita. Cada palabra que sale de mi corazón sale directo hacia a ti. No quiero olvidar ninguna de esas explosiones de cariño e inspiración, así que dejaré todas mis creaciones aquí :3</p>
         </div>
 
-        <div class="row poema-container">
+        <div class="row poema-container" value="4">
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
             <div class="icon"><i class="bi bi-briefcase"></i></div>
             <h4 class="title"><a href="">Lorem Ipsum</a></h4>
@@ -496,21 +496,18 @@
     function insertarPoemas(){
         
       var directorio = "assets/docs/poemas";
-      //Instanciar objeto
+      var n = document.querySelector(".poema-container").getAttribute("value");
+      console.log(n);
       var xhttp = new XMLHttpRequest();
-      //Configuramos la solicitud
-      xhttp.open("GET","assets/docs/poemas/poema1.txt",true); //El true es para decir que la comunicacion es asincrona
-      //Asignar la funcion que responde al evento cuando llegan los datos
-      xhttp.onreadystatechange = function(){
-          if(this.readyState == 4 && this.status == 200){
-              console.log(this.responseText);
-          }
+      for(var i =1; i<=n; i++){
+        xhttp.open("GET","assets/docs/poemas/poema1.txt",true); //El true es para decir que la comunicacion es asincrona
+        xhttp.onreadystatechange = function(){
+            if(this.readyState == 4 && this.status == 200){
+                console.log(this.responseText);
+            }
+        }
+        xhttp.send();
       }
-      //Enviar solicitud
-      xhttp.send();
-      
-      
-      
     }
 
     function init(){
