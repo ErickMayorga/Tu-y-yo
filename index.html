@@ -6,6 +6,7 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Tu y yo</title>
+  <script src="assets/js/jquery-3.6.0.js"></script>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -491,18 +492,6 @@
 
     function insertarFotos(){
       
-      var directoryPath = "assets/docs/fotos";
-      try{
-        var ls=fs.readdirSync(directoryPath);
-
-        for (let index = 0; index < ls.length; index++) {
-          const filePath = path.join(directoryPath, ls[index]);
-          
-          
-        }
-      }catch(e){
-
-      }
     }
 
     function insertarPoemas(){
@@ -528,32 +517,6 @@
 
     }
 
-    
-    function searchFilesList(filePath){
-      var filesList = new Array();
-      //var fso = new ActiveXObject("Scripting.FileSystemObject");
-      var fso = getActiveXObject("Scripting.FileSystemObject")
-      var f = fso.GetFolder(filePath);
-      /*
-      // Recorrer el directorio
-      var fk = new Enumerator(f.SubFolders);
-      for (var filesIndex = 0; !fk.atEnd(); fk.moveNext()) {
-          filesList[filesIndex++] = fk.item();
-          searchFilesList(fk.item());
-      }
-      */
-          // Recorrer archivos de directorio
-      var fc = new Enumerator(f.files);
-      for (var filesIndex = 0; !fc.atEnd(); fc.moveNext()) {
-          filesList[filesIndex++] = fc.item();
-      }
-
-      for (var i=0; i<filesList.length; i++){
-        console.log(filesList[i]);
-        //textarea.innerHTML += filesList[i]+"<br>";
-      }
-    }
-
     function init(){
       crearDivFoto("assets/img/jime.png");
       crearDivPoema("Titulo del poema","Contenido del poema");
@@ -567,9 +530,6 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
-  <!--JQuery-->
-  <script src="assets/js/jquery-3.6.0.js"></script>
 
 </body>
 
