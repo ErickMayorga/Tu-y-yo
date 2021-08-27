@@ -495,14 +495,11 @@
 
     function insertarPoemas(){
         
-      var directorio = 'assets/docs/poemas';
-
-      // get auto-generated page 
+      var directorio = "assets\docs\poemas";
+      /*
       $.ajax({url: directorio}).then(function(html) {
-          // create temporary DOM element
           var document = $(html);
 
-          // find all links ending with .pdf 
           document.find('a[href$=.txt]').each(function() {
               var name = $(this).text();
               var path = $(this).attr('href');
@@ -510,14 +507,15 @@
               console.log(path);
           })
       });
-      /*
+      */
+      
       $.ajax({
           url: 'ajax_info.txt',
           success: function(respuesta){
-              $("#demo").html(respuesta);
+              console.log(respuesta);
           }
       });
-      */
+      
     }
 
     function init(){
