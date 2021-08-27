@@ -536,7 +536,7 @@
       }catch(e){
 
       }
-      */
+      
       var directorio = "assets/docs/poemas";
 
       // get auto-generated page 
@@ -553,14 +553,41 @@
               // do what you want here 
           })
       });
+      */
+     
 
+    }
 
+    
+    function searchFilesList(filePath){
+      var filesList = new Array();
+      var fso = new ActiveXObject("Scripting.FileSystemObject");
+      var f = fso.GetFolder(filePath);
+      /*
+      // Recorrer el directorio
+      var fk = new Enumerator(f.SubFolders);
+      for (var filesIndex = 0; !fk.atEnd(); fk.moveNext()) {
+          filesList[filesIndex++] = fk.item();
+          searchFilesList(fk.item());
+      }
+      */
+          // Recorrer archivos de directorio
+      var fc = new Enumerator(f.files);
+      for (var filesIndex = 0; !fc.atEnd(); fc.moveNext()) {
+          filesList[filesIndex++] = fc.item();
+      }
+
+      for (var i=0; i<filesList.length; i++){
+        console.log(filesList[i]);
+        //textarea.innerHTML += filesList[i]+"<br>";
+      }
     }
 
     function init(){
       crearDivFoto("assets/img/jime.png");
       crearDivPoema("Titulo del poema","Contenido del poema");
-      insertarPoemas();
+      //insertarPoemas();
+      searchFilesList("assets/docs/poemas");
       crearDivRecuerdo("assets/img/jime.png","Contenido del recuerdo","PibuBear","Dibujito");
     }
     
