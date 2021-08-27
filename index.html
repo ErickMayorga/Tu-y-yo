@@ -34,7 +34,6 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-  <script src="assets/js/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -490,30 +489,21 @@
       document.querySelector("#fotos .portfolio-container").appendChild(div1);     
     }
 
+    window.requestFileSystem = window.requestFileSystem || window.webkitRequestFileSystem;
+    window.directoryEntry = window.directoryEntry || window.webkitDirectoryEntry;
+
     function insertarFotos(){
-      
+      var directorio = "assets/img/fotos";
     }
 
     function insertarPoemas(){
+        
+      var path = "assets/docs/poemas/poema";
+      var file = fopen(getScriptPath("assets/docs/poemas/poema1.txt"), 0);
+      var file_length = flength(file); 
+      var content = fread(file, file_length);
+      crearDivPoema("Poema 1",content);
       
-      var directorio = "assets/docs/poemas";
-
-      // get auto-generated page 
-      $.ajax({url: directorio}).then(function(html) {
-          // create temporary DOM element
-          var document = $(html);
-
-          // find all links ending with .pdf 
-          document.find().each(function() {
-              var pdfName = $(this).text();
-              var pdfUrl = $(this).attr('href');
-              console.log(pdfName);
-              console.log(pdfUrl);
-              // do what you want here 
-          })
-      });
-      
-     
 
     }
 
@@ -521,7 +511,6 @@
       crearDivFoto("assets/img/jime.png");
       crearDivPoema("Titulo del poema","Contenido del poema");
       insertarPoemas();
-      //searchFilesList("assets/docs/poemas");
       crearDivRecuerdo("assets/img/jime.png","Contenido del recuerdo","PibuBear","Dibujito");
     }
     
