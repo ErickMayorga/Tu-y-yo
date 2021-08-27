@@ -371,29 +371,7 @@
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
 
   <script>
-    function insertarPoemas(){
-      
-      var directoryPath = "assets/docs/poemas";
-      try{
-        var ls=fs.readdirSync(directoryPath);
-
-        for (let index = 0; index < ls.length; index++) {
-          const filePath = path.join(directoryPath, ls[index]);
-          var dataFile =null;
-          try{
-              //dataFile = fs.lstatSync(filePath);
-              var fso = new ActiveXObject("Scripting.FileSystemObject"); 
-              var f = fso.OpenTextFile(filePath,1); 
-              var s = ""; 
-              while (!f.AtEndOfStream) 
-              s += f.ReadLine()+"\n"; 
-              f.Close(); 
-          }catch(e){}
-        }
-      }catch(e){
-
-      }
-    }
+    
 
     function insertarFotos(){
       
@@ -440,22 +418,7 @@
 
     }
 
-    /*
-    <div class="swiper-slide">
-      <div class="testimonial-item" data-aos="fade-up">
-        <p>
-          <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-          Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-          <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-        </p>
-        <img src="assets/img/recuerdos/recuerdo1.jpg" class="testimonial-img" alt="">
-        <h3>Saul Goodman</h3>
-        <h4>Ceo &amp; Founder</h4>
-      </div>
-    </div><!-- End testimonial item -->
-    */
-
-    function crearDivRecuerdo(){
+    function crearDivRecuerdo(imagen,contenido,titulo1,titulo2){
       let div1 = document.createElement("div");
       div1.classList.add("swiper-slide");
 
@@ -472,17 +435,17 @@
       i2.classList.add("bx");
       i2.classList.add("bxs-quote-alt-right");
       i2.classList.add("quote-icon-right");
-      var text1 = document.createTextNode("Contenido de recuerdo");
+      var text1 = document.createTextNode(contenido);
 
       let img = document.createElement("img");
-      img.setAttribute("src","assets/img/pibu_bear.jpg");
+      img.setAttribute("src",imagen);
       img.classList.add("testimonial-img");
 
       let h3 = document.createElement("h3");
-      var text2 = document.createTextNode("PibuBear");
+      var text2 = document.createTextNode(titulo1);
 
       let h4 = document.createElement("h4");
-      var text3 = document.createTextNode("Dibujito");
+      var text3 = document.createTextNode(titulo2);
 
       p.appendChild(i1);
       p.appendChild(text1);
@@ -501,15 +464,7 @@
       document.querySelector("#recuerdos .swiper-wrapper").appendChild(div1);
     }
 
-    /*
-    <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-      <div class="icon"><i class="bi bi-briefcase"></i></div>
-      <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-      <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-    </div>
-    */
-
-    function crearDivPoema(){
+    function crearDivPoema(titulo,contenido){
       let div1 = document.createElement("div");
       div1.classList.add("col-lg-4");
       div1.classList.add("col-md-6");
@@ -526,11 +481,11 @@
       let h4 = document.createElement("h4");
       h4.classList.add("title");
 
-      var text1 = document.createTextNode("Poema de prueba");
+      var text1 = document.createTextNode(titulo);
 
       let p = document.createElement("p");
       p.classList.add("description");
-      var text2 = document.createTextNode("Contenido de prueba");
+      var text2 = document.createTextNode(contenido);
 
       div2.appendChild(i1);
       h4.appendChild(text1);
@@ -588,10 +543,38 @@
       document.querySelector("#fotos .portfolio-container").appendChild(div1);     
     }
 
+    function insertarPoemas(){
+      var cont=0;
+      var directoryPath = "assets/docs/poemas";
+      try{
+        var ls=fs.readdirSync(directoryPath);
+
+        for (let index = 0; index < ls.length; index++) {
+          const filePath = path.join(directoryPath, ls[index]);
+          var dataFile =null;
+          try{
+              //dataFile = fs.lstatSync(filePath);
+              var fso = new ActiveXObject("Scripting.FileSystemObject"); 
+              var f = fso.OpenTextFile(filePath,1); 
+              var s = ""; 
+              while (!f.AtEndOfStream){
+                s += f.ReadLine()+"\n"; 
+              } 
+              f.Close();
+              cont=cont+1; 
+              crearDivPoema("Poema " + cont,s);
+          }catch(e){}
+        }
+      }catch(e){
+
+      }
+    }
+
     function init(){
       crearDivFoto("assets/img/jime.png");
-      crearDivPoema();
-      crearDivRecuerdo();
+      //crearDivPoema("Titulo del poema","Contenido del poema");
+      insertarFotos();
+      crearDivRecuerdo("assets/img/jime.png","Contenido del recuerdo","PibuBear","Dibujito");
     }
     
     window.onload = init;
