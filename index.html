@@ -516,12 +516,10 @@
         xhttp.onreadystatechange = function(){
           if(this.readyState == 4 && this.status == 200){
             var contenido = this.responseText;
-            var arrayContenido = contenido.split("\n");
-            var tituloPoema = arrayContenido[0] + '\n' + arrayContenido[1];
-            var contenidoPoema = "";
-            for(var i=2; i<arrayContenido.length; i++){
-              contenidoPoema = contenidoPoema + arrayContenido[i] + '\n';
-            }
+            var arrayContenido = contenido.split("-");
+            var tituloPoema = arrayContenido[0];
+            var contenidoPoema = arrayContenido[1];
+            
             crearDivPoema(tituloPoema,contenidoPoema);
           }
       }
