@@ -291,7 +291,7 @@
                 <h4>Store Owner</h4>
               </div>
             </div><!-- End testimonial item -->
-
+            <!--
             <div class="swiper-slide">
               <div class="testimonial-item" data-aos="fade-up" data-aos-delay="300">
                 <p>
@@ -303,7 +303,7 @@
                 <h3>Matt Brandon</h3>
                 <h4>Freelancer</h4>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
             <div class="swiper-slide">
               <div class="testimonial-item" data-aos="fade-up" data-aos-delay="400">
@@ -316,8 +316,8 @@
                 <h3>John Larson</h3>
                 <h4>Entrepreneur</h4>
               </div>
-            </div><!-- End testimonial item -->
-
+            </div>
+            -->
           </div>
           <div class="swiper-pagination"></div>
         </div>
@@ -486,6 +486,45 @@
       let div1 = document.createElement("div");
       div1.classList.add("swiper-slide");
 
+      let div2 = document.createElement("div");
+      div2.classList.add("testimonial-item");
+      div1.setAttribute("data-aos","fade-up");
+
+      let p = document.createElement("p");
+      let i1 = document.createElement("i");
+      i1.classList.add("bx");
+      i1.classList.add("bxs-quote-alt-left");
+      i1.classList.add("quote-icon-left");
+      let i2 = document.createElement("i");
+      i2.classList.add("bx");
+      i2.classList.add("bxs-quote-alt-right");
+      i2.classList.add("quote-icon-right");
+      var text1 = document.createTextNode("Contenido de recuerdo");
+
+      let img = document.createElement("img");
+      img.setAttribute("src","assets/img/pibu_bear.jpg");
+      img.classList.add("testimonial-img");
+
+      let h3 = document.createElement("h3");
+      var text2 = document.createTextNode("PibuBear");
+
+      let h4 = document.createElement("h4");
+      var text3 = document.createTextNode("Dibujito");
+
+      p.appendChild(i1);
+      p.appendChild(text1);
+      p.appendChild(i2);
+
+      h3.appendChild(text2);
+      h4.appendChild(text3);
+
+      div2.appendChild(p);
+      div2.appendChild(img);
+      div2.appendChild(h3);
+      div2.appendChild(h4);
+
+      div1.appendChild(div2);
+
       document.querySelector("#recuerdos .swiper-wrapper").appendChild(div1);
     }
 
@@ -516,7 +555,7 @@
 
       var text1 = document.createTextNode("Poema de prueba");
 
-      let p = document.createElement("h4");
+      let p = document.createElement("p");
       p.classList.add("description");
       var text2 = document.createTextNode("Contenido de prueba");
 
@@ -575,8 +614,14 @@
       div1.appendChild(div2);
       document.querySelector("#fotos .portfolio-container").appendChild(div1);     
     }
-    window.onload = crearDivFoto;
-    window.onload = crearDivPoema;
+
+    function init(){
+      crearDivFoto();
+      crearDivPoema();
+      crearDivRecuerdo();
+    }
+    
+    window.onload = init;
 </script>
 
   <!-- Template Main JS File -->
