@@ -198,7 +198,7 @@
           <h2>Nuestras líricas</h2>
           <p>Nunca olvides que tu eres mi inspiración más bonita. Cada palabra que sale de mi corazón sale directo hacia a ti. No quiero olvidar ninguna de esas explosiones de cariño e inspiración, así que dejaré todas mis creaciones aquí :3</p>
         </div>
-        
+
         <div class="row poema-container">
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
             <div class="icon"><i class="bi bi-briefcase"></i></div>
@@ -502,7 +502,7 @@
       var file = fopen(getScriptPath("assets/docs/poemas/poema1.txt"), 0);
       var file_length = flength(file); 
       var content = fread(file, file_length);
-      crearDivPoema("Poema 1",content);
+      crearDivPoema("Poema 1","<?php echo 1; ?>");
       
 
     }
@@ -515,6 +515,7 @@
     }
     
     window.onload = init;
+    
 </script>
 
   <!-- Template Main JS File -->
