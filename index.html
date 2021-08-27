@@ -517,13 +517,12 @@
           if(this.readyState == 4 && this.status == 200){
             var contenido = this.responseText;
             var arrayContenido = contenido.split("\n");
-            var tituloPoema = arrayContenido[0];
+            var tituloPoema = arrayContenido[0] + "\n" + arrayContenido[1];
             var contenidoPoema = "";
-            for(var i=1; i<arrayContenido.length; i++){
+            for(var i=2; i<arrayContenido.length; i++){
               contenidoPoema = contenidoPoema + arrayContenido[i] + "\n";
             }
             crearDivPoema(tituloPoema,contenidoPoema);
-            //console.log(this.responseText);
           }
       }
       xhttp.send();
@@ -533,7 +532,6 @@
 
     function init(){
       crearDivFoto("assets/img/jime.png");
-      crearDivPoema("Titulo del poema","Contenido del poema");
       insertarPoemas();
       crearDivRecuerdo("assets/img/jime.png","Contenido del recuerdo","PibuBear","Dibujito");
     }
