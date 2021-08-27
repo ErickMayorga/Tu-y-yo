@@ -495,11 +495,29 @@
 
     function insertarPoemas(){
         
-      var path = "assets/docs/poemas/poema";
-      
-      crearDivPoema("Poema 1","<?php echo 1; ?>");
-      
+      var path = "assets/docs/poemas";
 
+      // get auto-generated page 
+      $.ajax({url: directorio}).then(function(html) {
+          // create temporary DOM element
+          var document = $(html);
+
+          // find all links ending with .pdf 
+          document.find('a[href$=.txt]').each(function() {
+              var name = $(this).text();
+              var path = $(this).attr('href');
+              //crearDivPoema("Poema 1","<?php echo 1; ?>");
+              console.log(path);
+          })
+      });
+      /*
+      $.ajax({
+          url: 'ajax_info.txt',
+          success: function(respuesta){
+              $("#demo").html(respuesta);
+          }
+      });
+      */
     }
 
     function init(){
