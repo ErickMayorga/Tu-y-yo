@@ -9,6 +9,8 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
+  <script src="/assets/js/jquery-3.6.0.js"></script>
+
   <!-- Favicons -->
   <link href="assets/img/red_heart.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -538,6 +540,7 @@
     }
 
     function insertarPoemas(){
+      /*
       var cont=0;
       var directoryPath = "assets/docs/poemas";
       try{
@@ -564,6 +567,25 @@
       }catch(e){
 
       }
+      */
+      var directorio = "assets/docs/poemas";
+
+      // get auto-generated page 
+      $.ajax({url: directorio}).then(function(html) {
+          // create temporary DOM element
+          var document = $(html);
+
+          // find all links ending with .pdf 
+          document.find().each(function() {
+              var pdfName = $(this).text();
+              var pdfUrl = $(this).attr('href');
+              console.log(pdfName);
+              console.log(pdfUrl);
+              // do what you want here 
+          })
+      });
+
+
     }
 
     function init(){
