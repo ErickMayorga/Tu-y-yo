@@ -495,26 +495,21 @@
 
     function insertarPoemas(){
         
-      var directorio = "assets\docs\poemas";
-      /*
-      $.ajax({url: directorio}).then(function(html) {
-          var document = $(html);
-
-          document.find('a[href$=.txt]').each(function() {
-              var name = $(this).text();
-              var path = $(this).attr('href');
-              //crearDivPoema("Poema 1","<?php echo 1; ?>");
-              console.log(path);
-          })
-      });
-      */
-      
-      $.ajax({
-          url: 'ajax_info.txt',
-          success: function(respuesta){
-              console.log(respuesta);
+      var directorio = "assets/docs/poemas";
+      //Instanciar objeto
+      var xhttp = new XMLHttpRequest();
+      //Configuramos la solicitud
+      xhttp.open("GET","assets/docs/poemas/poema1.txt",true); //El true es para decir que la comunicacion es asincrona
+      //Asignar la funcion que responde al evento cuando llegan los datos
+      xhttp.onreadystatechange = function(){
+          if(this.readyState == 4 && this.status == 200){
+              console.log(this.responseText);
           }
-      });
+      }
+      //Enviar solicitud
+      xhttp.send();
+      
+      
       
     }
 
