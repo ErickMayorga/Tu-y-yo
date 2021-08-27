@@ -506,33 +506,6 @@
     }
 
     function insertarPoemas(){
-      /*
-      var cont=0;
-      var directoryPath = "assets/docs/poemas";
-      try{
-        var ls=fs.readdirSync(directoryPath);
-
-        for (let index = 0; index < ls.length; index++) {
-          const filePath = path.join(directoryPath, ls[index]);
-          var dataFile =null;
-          console.log(filePath);
-          try{
-              //dataFile = fs.lstatSync(filePath);
-              var fso = new ActiveXObject("Scripting.FileSystemObject"); 
-              var f = fso.OpenTextFile(filePath,1); 
-              var s = ""; 
-              while (!f.AtEndOfStream){
-                s += f.ReadLine()+"\n"; 
-              } 
-              f.Close();
-              cont=cont+1; 
-              //crearDivPoema("Poema " + cont,s);
-              console.log(s);
-          }catch(e){}
-        }
-      }catch(e){
-
-      }
       
       var directorio = "assets/docs/poemas";
 
@@ -550,7 +523,7 @@
               // do what you want here 
           })
       });
-      */
+      
      
 
     }
@@ -584,8 +557,8 @@
     function init(){
       crearDivFoto("assets/img/jime.png");
       crearDivPoema("Titulo del poema","Contenido del poema");
-      //insertarPoemas();
-      searchFilesList("assets/docs/poemas");
+      insertarPoemas();
+      //searchFilesList("assets/docs/poemas");
       crearDivRecuerdo("assets/img/jime.png","Contenido del recuerdo","PibuBear","Dibujito");
     }
     
