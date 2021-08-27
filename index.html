@@ -9,8 +9,6 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
-  <script src="/assets/js/jquery-3.6.0.js"></script>
-
   <!-- Favicons -->
   <link href="assets/img/red_heart.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -35,6 +33,7 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <script src="/assets/js/jquery-3.6.0.js"></script>
 </head>
 
 <body>
@@ -169,11 +168,6 @@
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
               <li data-filter="*" class="filter-active">All</li>
-              <!--
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
-              -->
               <li data-filter=".filter-jime">Jime</li>
             </ul>
           </div>
@@ -211,33 +205,7 @@
             <h4 class="title"><a href="">Lorem Ipsum</a></h4>
             <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
           </div>
-          <!--
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon"><i class="bi bi-card-checklist"></i></div>
-            <h4 class="title"><a href="">Dolor Sitema</a></h4>
-            <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon"><i class="bi bi-bar-chart"></i></div>
-            <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon"><i class="bi bi-binoculars"></i></div>
-            <h4 class="title"><a href="">Magni Dolores</a></h4>
-            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
-            <div class="icon"><i class="bi bi-brightness-high"></i></div>
-            <h4 class="title"><a href="">Nemo Enim</a></h4>
-            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
-            <div class="icon"><i class="bi bi-calendar4-week"></i></div>
-            <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-            <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
-          </div>
-          -->
+          
         </div>
 
       </div>
@@ -309,7 +277,7 @@
           <p>asfasfasdfsdf</p>
         </div>
 
-        <div class="row">
+        <div class="row diario-container">
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
             <div class="icon"><i class="bi bi-briefcase"></i></div>
             <h4 class="title"><a href="">Lorem Ipsum</a></h4>
@@ -330,16 +298,23 @@
             <h4 class="title"><a href="">Magni Dolores</a></h4>
             <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
           </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
-            <div class="icon"><i class="bi bi-brightness-high"></i></div>
-            <h4 class="title"><a href="">Nemo Enim</a></h4>
-            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
-            <div class="icon"><i class="bi bi-calendar4-week"></i></div>
-            <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-            <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
-          </div>
+        </div>
+
+      </div>
+    </section><!-- End Nuestro diario Section -->
+
+    <section id="archivo" class="services">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Carga de archivos</h2>
+          <p>asfasfasdfsdf</p>
+        </div>
+
+        <div class="row archivo-container">
+          <input type="file" id="file-input"/>
+          <h3>Contenido del archivo:</h3>
+          <pre id="contenido-archivo"></pre>
         </div>
 
       </div>
@@ -387,24 +362,20 @@
       lector.readAsText(archivo);
     }
 
-    //document.getElementById('file-input').addEventListener('change', leerArchivo, false);
-    /*
-    <input type="file" id="file-input" />
-    <h3>Contenido del archivo:</h3>
-    <pre id="contenido-archivo"></pre>
-    */
+    document.getElementById('file-input').addEventListener('change', leerArchivo, false);
 
     function insertarRecuerdos(){
 
     }
 
-    function crearDivRecuerdo(imagen,contenido,titulo1,titulo2){
+    function crearDivRecuerdo(imagen,contenido,titulo1,titulo2,delay){
       let div1 = document.createElement("div");
       div1.classList.add("swiper-slide");
 
       let div2 = document.createElement("div");
       div2.classList.add("testimonial-item");
-      div1.setAttribute("data-aos","fade-up");
+      div2.setAttribute("data-aos","fade-up");
+      div2.setAttribute("data-aos-delay",delay);
 
       let p = document.createElement("p");
       let i1 = document.createElement("i");
