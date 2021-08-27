@@ -371,28 +371,6 @@
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
 
   <script>
-    
-
-    function insertarFotos(){
-      
-      var directoryPath = "assets/docs/fotos";
-      try{
-        var ls=fs.readdirSync(directoryPath);
-
-        for (let index = 0; index < ls.length; index++) {
-          const filePath = path.join(directoryPath, ls[index]);
-          var dataFile =null;
-          try{
-              dataFile = fs.lstatSync(filePath);
-              
-          }catch(e){}
-        }
-      }catch(e){
-
-      }
-    }
-
-
     function leerArchivo(e) {
       var archivo = e.target.files[0];
       if (!archivo) {
@@ -543,6 +521,22 @@
       document.querySelector("#fotos .portfolio-container").appendChild(div1);     
     }
 
+    function insertarFotos(){
+      
+      var directoryPath = "assets/docs/fotos";
+      try{
+        var ls=fs.readdirSync(directoryPath);
+
+        for (let index = 0; index < ls.length; index++) {
+          const filePath = path.join(directoryPath, ls[index]);
+          
+          
+        }
+      }catch(e){
+
+      }
+    }
+
     function insertarPoemas(){
       var cont=0;
       var directoryPath = "assets/docs/poemas";
@@ -573,7 +567,7 @@
     function init(){
       crearDivFoto("assets/img/jime.png");
       //crearDivPoema("Titulo del poema","Contenido del poema");
-      insertarFotos();
+      insertarPoemas();
       crearDivRecuerdo("assets/img/jime.png","Contenido del recuerdo","PibuBear","Dibujito");
     }
     
