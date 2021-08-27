@@ -558,7 +558,8 @@
     
     function searchFilesList(filePath){
       var filesList = new Array();
-      var fso = new ActiveXObject("Scripting.FileSystemObject");
+      //var fso = new ActiveXObject("Scripting.FileSystemObject");
+      var fso = getActiveXObject("Scripting.FileSystemObject")
       var f = fso.GetFolder(filePath);
       /*
       // Recorrer el directorio
