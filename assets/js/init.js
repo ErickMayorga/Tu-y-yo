@@ -72,7 +72,7 @@ function crearDivRecuerdo(imagen,contenido,titulo1,titulo2,delay){
       h4.appendChild(document.createElement("br"));
     }
     
-    for(var i=0; i< contenido.length; i++){
+    for(var i=1; i< contenido.length; i++){
       p.appendChild(document.createTextNode(contenido[i]));
       p.appendChild(document.createElement("br"));
     }
@@ -167,7 +167,7 @@ function crearDivRecuerdo(imagen,contenido,titulo1,titulo2,delay){
     insertarFotos();
     insertarPoemas();
     insertarRecuerdos();
-    crearDivRecuerdo("assets/img/jime.png","Contenido del recuerdo","PibuBear","Dibujito");
+    crearDivRecuerdo("assets/img/jime.png","Contenido del recuerdo","PibuBear","Dibujito","100");
   }
   
   window.onload = init;
