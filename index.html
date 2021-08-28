@@ -429,13 +429,12 @@
       document.querySelector("#liricas .poema-container").appendChild(div1);
     }
 
-
-    function crearDivFoto(imagen){
+    function crearDivFoto(imagen, filter, title){
       let div1 = document.createElement("div");
       div1.classList.add("col-lg-4");
       div1.classList.add("col-md-6");
       div1.classList.add("portfolio-item");
-      div1.classList.add("filter-jime");
+      div1.classList.add("filter-" + filter);
       
       let div2 = document.createElement("div");
       div2.classList.add("portfolio-wrap");
@@ -451,7 +450,7 @@
       a1.setAttribute("href",imagen);
       a1.setAttribute("data-gallery","portfolioGallery");
       a1.classList.add("portfolio-lightbox");
-      a1.setAttribute("title","Jime 2");
+      a1.setAttribute("title",title);
 
       let i1 = document.createElement("i");
       i1.classList.add("bx");
@@ -491,7 +490,7 @@
       var rPath = "assets/img/fotos/foto";
       var n = document.querySelector(".portfolio-container").getAttribute("value");
       for(var i=1; i<=n; i++){
-        crearDivFoto(rPath + i + ".txt");
+        crearDivFoto(rPath + i + ".txt", "jime", "Jime " + i);
       }
     }
 
@@ -523,7 +522,6 @@
     }
 
     function init(){
-      //crearDivFoto("assets/img/jime.png");
       insertarFotos();
       insertarPoemas();
       insertarRecuerdos();
