@@ -184,7 +184,6 @@
               </div>
             </div>
           </div>
-        
         </div>
 
       </div>
@@ -200,12 +199,13 @@
         </div>
 
         <div class="row poema-container" value="4">
+          <!--
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
             <div class="icon"><i class="bi bi-briefcase"></i></div>
             <h4 class="title"><a href="">Lorem Ipsum</a></h4>
             <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
           </div>
-          
+          -->
         </div>
 
       </div>
@@ -434,8 +434,11 @@
       var text2 = document.createTextNode(contenido);
 
       div2.appendChild(i1);
+
       h4.appendChild(text1);
+
       p.appendChild(text2);
+
       div1.appendChild(div2);
       div1.appendChild(h4);
       div1.appendChild(p);
@@ -517,10 +520,10 @@
           if(this.readyState == 4 && this.status == 200){
             var contenido = this.responseText;
             var arrayContenido = contenido.split("\n");
-            var tituloPoema = arrayContenido[0] + "\t" + arrayContenido[1];
+            var tituloPoema = arrayContenido[0] + "\t\t" + arrayContenido[1];
             var contenidoPoema = "";
             for(var i=2; i<arrayContenido.length; i++){
-              contenidoPoema = contenidoPoema + arrayContenido[i] + "\n";
+              contenidoPoema = contenidoPoema + arrayContenido[i] + "\t\t";
             }
             crearDivPoema(tituloPoema,contenidoPoema);
           }
