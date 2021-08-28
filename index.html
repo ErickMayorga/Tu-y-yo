@@ -427,7 +427,7 @@
       let h4 = document.createElement("h4");
       h4.classList.add("title");
 
-      var text1 = document.createTextNode(titulo);
+      //var text1 = document.createTextNode(titulo);
 
       let p = document.createElement("p");
       p.classList.add("description");
@@ -435,9 +435,17 @@
 
       div2.appendChild(i1);
 
-      h4.appendChild(text1);
-
-      p.appendChild(text2);
+      var tituloP = titulo.split("\n");
+      for(var i=0; i< tituloP.length; i++){
+        h4.appendChild(document.createTextNode(tituloP[i]));
+        h4.appendChild(document.createElement("br"));
+      }
+      
+      var contenidoP = contenido.split("\n");
+      for(var i=0; i< contidoP.length; i++){
+        p.appendChild(document.createTextNode(contenidoP[i]));
+        p.appendChild(document.createElement("br"));
+      }
 
       div1.appendChild(div2);
       div1.appendChild(h4);
@@ -519,12 +527,9 @@
         xhttp.onreadystatechange = function(){
           if(this.readyState == 4 && this.status == 200){
             var contenido = this.responseText;
-            var arrayContenido = contenido.split("\n");
-            var tituloPoema = arrayContenido[0] + "\t\t" + arrayContenido[1];
-            var contenidoPoema = "";
-            for(var i=2; i<arrayContenido.length; i++){
-              contenidoPoema = contenidoPoema + arrayContenido[i] + "\t\t";
-            }
+            var arrayContenido = contenido.split("-");
+            var tituloPoema = arrayContenido[0];
+            var contenidoPoema = arrayContenido[1];
             crearDivPoema(tituloPoema,contenidoPoema);
           }
       }
