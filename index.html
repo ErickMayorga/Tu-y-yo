@@ -173,7 +173,7 @@
           </div>
         </div>       
 
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100" value="1">
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-jime">
             <div class="portfolio-wrap">
@@ -510,7 +510,11 @@
     }
 
     function insertarFotos(){
-      var directorio = "assets/img/fotos";
+      var rPath = "assets/img/fotos/foto";
+      var n = document.querySelector(".portfolio-container").getAttribute("value");
+      for(var i=1; i<=n; i++){
+        crearDivFoto(rPath + i + ".txt");
+      }
     }
 
     function insertarPoemas(){
@@ -536,9 +540,15 @@
       
     }
 
+    function insertarRecuerdos(){
+
+    }
+
     function init(){
-      crearDivFoto("assets/img/jime.png");
+      //crearDivFoto("assets/img/jime.png");
+      insertarFotos();
       insertarPoemas();
+      insertarRecuerdos();
       crearDivRecuerdo("assets/img/jime.png","Contenido del recuerdo","PibuBear","Dibujito");
     }
     
