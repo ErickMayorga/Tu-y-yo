@@ -343,25 +343,6 @@
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
 
   <script>
-    function leerArchivo(e) {
-      var archivo = e.target.files[0];
-      if (!archivo) {
-        return;
-      }
-      var lector = new FileReader();
-      lector.onload = function(e) {
-        var contenido = e.target.result;
-        var elemento = document.getElementById('contenido-archivo');
-        elemento.innerHTML = contenido;
-      };
-      lector.readAsText(archivo);
-    }
-
-    document.getElementById('file-input').addEventListener('change', leerArchivo, false);
-
-    function insertarRecuerdos(){
-
-    }
 
     function crearDivRecuerdo(imagen,contenido,titulo1,titulo2,delay){
       let div1 = document.createElement("div");
@@ -427,11 +408,8 @@
       let h4 = document.createElement("h4");
       h4.classList.add("title");
 
-      //var text1 = document.createTextNode(titulo);
-
       let p = document.createElement("p");
       p.classList.add("description");
-      var text2 = document.createTextNode(contenido);
 
       div2.appendChild(i1);
 
