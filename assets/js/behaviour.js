@@ -1,8 +1,9 @@
 function crearFiltro(){
-    var nombre = "Erick";
+    var input = document.querySelector("#txtFiltro");
+    
     let li = document.createElement("li");
-    li.setAttribute("data-filter",".filter-" + nombre);
-    var text = document.createTextNode("Erick");
+    li.setAttribute("data-filter",".filter-" + input.textContent);
+    var text = document.createTextNode(input);
     li.appendChild(text);
     document.querySelector("#portfolio-flters").appendChild(li);
 }
