@@ -212,7 +212,7 @@ function crearDivRecuerdo(imagen,contenido,titulo1,titulo2,delay){
   }
 
   function init(){
-    loadFilters();
+    //loadFilters();
     insertarFotos();
     insertarPoemas();
     insertarRecuerdos();
