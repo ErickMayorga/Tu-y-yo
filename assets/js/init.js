@@ -127,11 +127,11 @@ function crearDivRecuerdo(imagen,contenido,titulo1,titulo2,delay){
     div2.appendChild(div3);
     div1.appendChild(div2);
     document.querySelector("#fotos .portfolio-container").appendChild(div1);  
-    /*
+    
     const portfolioLightbox = GLightbox({
       selector: '.portfolio-lightbox'
     });
-    */
+    
   }
 
   function insertarFotos(){
@@ -169,13 +169,8 @@ function crearDivRecuerdo(imagen,contenido,titulo1,titulo2,delay){
   }
 
   function modalFilters(){
-    // Get the modal
     var modal = document.getElementById('myModal');
-
-    // Get the button that opens the modal
     var btn = document.getElementById("myBtn");
-
-    // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
 
     // When the user clicks the button, open the modal 
@@ -196,7 +191,27 @@ function crearDivRecuerdo(imagen,contenido,titulo1,titulo2,delay){
     }
   }
 
+  function loadFilters(){
+    var n = document.querySelector("#portfolio-flters").getAttribute("value");
+    
+    var xhttp = new XMLHttpRequest();
+    var path = "assets/docs/filters.txt";
+    xhttp.open("GET",path,true);
+    xhttp.onreadystatechange = function(){
+      if(this.readyState == 4 && this.status == 200){
+        var contenido = this.responseText;
+        var arrayContenido = contenido.split("\n");
+      }
+    for(var i=0; i<n;i++){
+      let li = document.createElement("li");
+      li.setAttribute("data-filter",".filter-" + arrayContenido[i]);
+      li.appendChild(arrayContenido[i]);
+      document.querySelector("#portfolio-flters").appendChild(li);
+    }
+  }
+
   function init(){
+    loadFilters();
     insertarFotos();
     insertarPoemas();
     insertarRecuerdos();
