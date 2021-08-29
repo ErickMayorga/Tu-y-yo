@@ -202,11 +202,12 @@ function crearDivRecuerdo(imagen,contenido,titulo1,titulo2,delay){
         var contenido = this.responseText;
         var arrayContenido = contenido.split("\n");
       }
-    for(var i=0; i<n;i++){
-      let li = document.createElement("li");
-      li.setAttribute("data-filter",".filter-" + arrayContenido[i]);
-      li.appendChild(arrayContenido[i]);
-      document.querySelector("#portfolio-flters").appendChild(li);
+      for(var i=0; i<n;i++){
+        let li = document.createElement("li");
+        li.setAttribute("data-filter",".filter-" + arrayContenido[i]);
+        li.appendChild(arrayContenido[i]);
+        document.querySelector("#portfolio-flters").appendChild(li);
+      }
     }
   }
 
