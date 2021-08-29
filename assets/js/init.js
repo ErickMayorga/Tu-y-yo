@@ -162,6 +162,10 @@ function crearDivRecuerdo(imagen,contenido,titulo1,titulo2,delay){
     xhttp.send();
     }
     
+    var filters = document.querySelector("#portfolio-flters .filter-active");
+    filters.onload = function(){
+      filters.click();
+    }
   }
 
   function insertarRecuerdos(){
