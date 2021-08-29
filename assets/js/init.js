@@ -126,7 +126,11 @@ function crearDivRecuerdo(imagen,contenido,titulo1,titulo2,delay){
     div2.appendChild(img);
     div2.appendChild(div3);
     div1.appendChild(div2);
-    document.querySelector("#fotos .portfolio-container").appendChild(div1);     
+    document.querySelector("#fotos .portfolio-container").appendChild(div1);  
+    
+    const portfolioLightbox = GLightbox({
+      selector: '.portfolio-lightbox'
+    });
   }
 
   function insertarFotos(){
