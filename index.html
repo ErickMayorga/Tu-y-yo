@@ -29,19 +29,6 @@
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="assets/css/myStyles.css" rel="stylesheet">
 
-  <style>
-    body { 
-      background-image: url("assets/img/cerezos3.gif"); 
-      background-position: center 25%; 
-      background-size: cover; 
-    }
-    .section-bg{
-      background-image: url("assets/img/hearts.gif"); 
-      background-position: center 25%; 
-      background-size: cover;
-    } 
-  </style>
-
   <!-- =======================================================
   * Template Name: iPortfolio - v3.3.0
   * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
@@ -200,20 +187,14 @@
             </div>
           </div>
 
-          <div id="myModal" class="modal fade" role="dialog">  
-            <div class="modal-dialog">
-                <div class="modal-content">      
-                    <div class="modal-header">        
-                        <button type="button" class="close" data-dismiss="modal">×</button>        
-                        <h4 class="modal-title">Modal Header</h4>      </div>      
-                    <div class="modal-body"><img src="assets/img/pibu_bear.jpg" class="img-rounded" alt="Cinque Terre" width="304" height="236" />   </div>      
-                    <div class="modal-footer">        
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>     
-                    </div>  
-                </div>  
-            </div>
+          <img id="myImg" src="https://picsum.photos/id/3/300/300" alt="Trolltunga, Norway" width="300" height="200">
 
-        </div>
+          <!-- The Modal -->
+          <div id="myModal" class="modal">
+            <span class="close">×</span>
+            <img class="modal-content" id="img01">
+            <div id="caption"></div>
+          </div>
 
       </div>
     </section><!-- End Nuestras fotos Section -->
@@ -373,6 +354,9 @@
 
   <!--Init-->
   <script src="assets/js/init.js"></script>
+
+  <!--Behaviour-->
+  <script src="assets/js/behaviour.js"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
